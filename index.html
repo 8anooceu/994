@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizador de PDFs</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Virtual</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="greeting"></h1>
-        <h2>Arquivos PDF</h2>
-        <div class="pdf-buttons">
-            <button onclick="openPDF('https://pdfupload.io/docs/6b322862')">Gerda Lerner - A Criação do Patriarcado</button>
-            <button onclick="openPDF('https://pdfupload.io/docs/7f90fbe4')">Mary Del Priore - História das Mulheres no Brasil</button>
-            <button onclick="openPDF('https://pdfupload.io/docs/134834eb')">Bruna Camilo - Dissertação</button>
-        </div>
-        <a href="https://www.nucleodoconhecimento.com.br/psicologia/consolidacao-do-patriarcado" target="_blank" class="article-link">Artigo Científico de Letícia Ésther de Andrade</a>
+  <div class="container">
+    <h1 id="saudacao"></h1>
+    <div class="pdf-container">
+      <h2>Arquivos PDF</h2>
+
+      <!-- Botões para abrir PDFs em tela cheia -->
+      <div class="pdf-button">
+        <button onclick="abrirPDF('criacao-patriarcado.pdf')">Gerda Lerner - A Criação do Patriarcado</button>
+      </div>
+      <div class="pdf-button">
+        <button onclick="abrirPDF('del-priore-historia-das-mulheres-no-brasil.pdf')">Mary Del Priore - História das Mulheres no Brasil</button>
+      </div>
+      <div class="pdf-button">
+        <button onclick="abrirPDF('dissertacao-bruna-camilo.pdf')">Bruna Camilo - Patriarcado e Teoria Política Feminista</button>
+      </div>
+
+      <!-- Link para o artigo científico -->
+      <div class="article-link">
+        <h3>Artigo Científico</h3>
+        <p><a href="https://www.nucleodoconhecimento.com.br/psicologia/consolidacao-do-patriarcado" target="_blank">
+          Consolidação do Patriarcado - Letícia Ésther de Andrade
+        </a></p>
+      </div>
     </div>
-    <script src="script.js"></script>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
