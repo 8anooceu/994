@@ -7,61 +7,88 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
+    background-color: #121212;
+    color: #f1f1f1;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    transition: background-color 0.3s ease;
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     max-width: 500px;
-    background-color: #fff;
+    background-color: #1e1e1e;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
 }
 
 h1 {
-    color: #333;
-    font-size: 24px;
+    color: #f1f1f1;
+    font-size: 26px;
     margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .upload-section {
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .upload-section h2 {
     font-size: 18px;
-    margin-bottom: 10px;
+    color: #bbbbbb;
+    margin-bottom: 15px;
 }
 
 input[type="file"] {
     display: block;
     margin: 10px auto;
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
+    background-color: #333;
+    color: #f1f1f1;
+    border: 1px solid #555;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background-color: #555;
+    color: #ddd;
 }
 
 .preview {
-    margin-top: 10px;
-}
-
-.preview img {
-    max-width: 100%;
-    margin: 10px 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .preview a {
-    display: block;
-    color: #0073e6;
-    text-decoration: none;
+    color: #90caf9;
+    font-weight: bold;
     margin: 5px 0;
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    transition: color 0.3s ease;
 }
 
 .preview a:hover {
-    text-decoration: underline;
+    color: #bbdefb;
+}
+
+/* Animação para links de PDF */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
