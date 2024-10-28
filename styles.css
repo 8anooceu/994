@@ -10,29 +10,22 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #1a1a1a;
+    background-color: #1e1e1e;
     color: #f0f0f0;
     font-family: Arial, sans-serif;
-    animation: backgroundFade 3s ease-in-out infinite alternate;
-}
-
-/* Animação de fundo */
-@keyframes backgroundFade {
-    0% { background-color: #1a1a1a; }
-    100% { background-color: #333; }
 }
 
 .container {
     text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    animation: containerEntry 1.5s ease-out;
+    padding: 30px;
+    border-radius: 8px;
+    background: rgba(40, 40, 40, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.2s ease-out;
 }
 
-@keyframes containerEntry {
-    from { opacity: 0; transform: translateY(-20px); }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -44,58 +37,48 @@ h1 {
 }
 
 @keyframes textGlow {
-    0% { text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff8c00; }
-    100% { text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; }
+    0% { text-shadow: 0 0 5px #ff8c00; }
+    100% { text-shadow: 0 0 10px #ff4500; }
 }
 
 h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     color: #f5a623;
-    animation: fadeIn 1.2s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    opacity: 0.8;
 }
 
 .pdf-links button {
     display: block;
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 12px;
     font-size: 1rem;
-    color: #fff;
-    background-color: #444;
-    border: none;
+    color: #f0f0f0;
+    background-color: #333;
+    border: 1px solid #444;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .pdf-links button:hover {
     background-color: #555;
-    transform: scale(1.05);
-    animation: buttonHover 0.5s ease-out;
-}
-
-@keyframes buttonHover {
-    0% { box-shadow: 0 0 5px #ff4500; }
-    100% { box-shadow: 0 0 15px #ff4500; }
+    transform: scale(1.03);
 }
 
 .article-link {
     display: inline-block;
     margin-top: 20px;
     font-size: 1.1rem;
-    color: #ff4500;
+    color: #ff8c00;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: color 0.3s, border-bottom 0.3s;
 }
 
 .article-link:hover {
-    color: #ff8c00;
-    border-bottom: 1px solid #ff8c00;
+    color: #ff4500;
+    border-bottom: 1px solid #ff4500;
 }
