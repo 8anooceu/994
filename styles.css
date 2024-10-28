@@ -1,49 +1,101 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: #121212;
-  color: #f0f0f0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    animation: backgroundFade 3s ease-in-out infinite alternate;
+}
+
+/* Animação de fundo */
+@keyframes backgroundFade {
+    0% { background-color: #1a1a1a; }
+    100% { background-color: #333; }
 }
 
 .container {
-  width: 80%;
-  max-width: 800px;
-  text-align: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: containerEntry 1.5s ease-out;
 }
 
-h1, h2 {
-  color: #ff9800;
-  margin: 20px 0;
+@keyframes containerEntry {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.pdf-button {
-  margin: 15px 0;
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff8c00;
+    animation: textGlow 2s ease-in-out infinite alternate;
 }
 
-button {
-  background-color: #ff9800;
-  color: #121212;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
+@keyframes textGlow {
+    0% { text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff8c00; }
+    100% { text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; }
 }
 
-button:hover {
-  background-color: #ffb74d;
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #f5a623;
+    animation: fadeIn 1.2s ease-in;
 }
 
-.article-link a {
-  color: #ff9800;
-  text-decoration: none;
-  font-weight: bold;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.article-link a:hover {
-  text-decoration: underline;
+.pdf-links button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.pdf-links button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    animation: buttonHover 0.5s ease-out;
+}
+
+@keyframes buttonHover {
+    0% { box-shadow: 0 0 5px #ff4500; }
+    100% { box-shadow: 0 0 15px #ff4500; }
+}
+
+.article-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #ff4500;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.article-link:hover {
+    color: #ff8c00;
+    border-bottom: 1px solid #ff8c00;
 }
